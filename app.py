@@ -14,52 +14,60 @@ st.title("🛡️ Financial Fraud Mitigation System")
 # --- CUSTOM CSS INJECTION ---
 st.markdown("""
 <style>
-    /* Style the main background and text */
-    .stApp {
-        background-color: #0E1117;
-        color: #FAFAFA;
+    /* Enforce the terminal font without forcing text colors */
+    h1, h2, h3, .stTextInput input, .stSelectbox div, [data-testid="stMetricValue"], .stException, .stAlert {
+        font-family: 'Courier New', Courier, monospace;
     }
-    
-    /* Make the Tabs look like modern pill-buttons */
+
+    /* Style the input boxes to adapt to the current theme */
+    .stTextInput input, .stSelectbox div {
+        border-radius: 4px;
+    }
+    .stTextInput input:focus, .stSelectbox div:focus {
+        box-shadow: 0 0 8px var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+    }
+
+    /* Tabs structure (Adapts to Light/Dark mode) */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 15px;
-        padding-bottom: 10px;
+        gap: 10px;
     }
     .stTabs [data-baseweb="tab"] {
-        background-color: #1E222B;
-        border-radius: 8px;
-        padding: 10px 20px;
-        border: 1px solid #333;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        border: 1px solid var(--secondary-background-color);
     }
     .stTabs [aria-selected="true"] {
-        background-color: #2E86AB !important; /* A nice professional blue */
-        color: white !important;
-        border: 1px solid #2E86AB;
+        border: 1px solid var(--primary-color) !important;
+        background-color: transparent !important;
+        box-shadow: 0 0 8px rgba(255, 75, 75, 0.2);
     }
-    
-    /* Upgrade the Primary Predict Button */
+
+    /* Predict Button (Always keeps the alert red aesthetic) */
     div.stButton > button:first-child {
-        background-color: #FF4B4B;
-        color: white;
-        border-radius: 8px;
-        border: none;
+        background-color: transparent;
+        color: #ff3333;
+        border: 2px solid #ff3333;
+        border-radius: 4px;
         padding: 10px 24px;
         font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         transition: all 0.3s ease;
     }
     div.stButton > button:first-child:hover {
-        background-color: #FF3333;
-        box-shadow: 0px 4px 15px rgba(255, 75, 75, 0.4);
-        transform: translateY(-2px);
-    }
-    
-    /* Style the input boxes */
-    .stTextInput > div > div > input, .stSelectbox > div > div > div {
-        background-color: #1E222B;
+        background-color: #ff3333;
         color: white;
-        border-radius: 5px;
-        border: 1px solid #444;
+        box-shadow: 0px 0px 15px rgba(255, 51, 51, 0.5);
+        border-color: #ff3333;
+    }
+
+    /* Metrics display (Heads-Up Display style) */
+    [data-testid="metric-container"] {
+        background-color: var(--secondary-background-color);
+        padding: 15px;
+        border-radius: 4px;
+        border-left: 4px solid var(--primary-color);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 </style>
 """, unsafe_allow_html=True)
