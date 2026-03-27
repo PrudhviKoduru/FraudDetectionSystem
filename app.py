@@ -14,92 +14,52 @@ st.title("🛡️ Financial Fraud Mitigation System")
 # --- CUSTOM CSS INJECTION ---
 st.markdown("""
 <style>
-    /* Main background: Dark cyber theme with a subtle grid */
+    /* Style the main background and text */
     .stApp {
-        background-color: #050914;
-        background-image: 
-            linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 20px 20px;
-        color: #c9d1d9;
-    }
-
-    /* Style the Headers to look like a terminal */
-    h1, h2, h3 {
-        color: #00f0ff !important;
-        text-shadow: 0px 0px 10px rgba(0, 240, 255, 0.3);
-        font-family: 'Courier New', Courier, monospace;
-        letter-spacing: 1px;
-    }
-
-    /* Input fields (Terminal style) */
-    .stTextInput input, .stSelectbox div {
-        background-color: rgba(13, 17, 23, 0.8) !important;
-        color: #00f0ff !important;
-        border: 1px solid #1f6feb !important;
-        border-radius: 4px;
-        font-family: 'Courier New', Courier, monospace;
+        background-color: #0E1117;
+        color: #FAFAFA;
     }
     
-    .stTextInput input:focus, .stSelectbox div:focus {
-        box-shadow: 0 0 8px rgba(0, 240, 255, 0.6) !important;
-        border-color: #00f0ff !important;
-    }
-
-    /* Tabs (Cyberpunk/Secure look) */
+    /* Make the Tabs look like modern pill-buttons */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: transparent;
-        gap: 10px;
+        gap: 15px;
+        padding-bottom: 10px;
     }
     .stTabs [data-baseweb="tab"] {
-        background-color: rgba(13, 17, 23, 0.8);
-        border: 1px solid #30363d;
-        color: #8b949e;
-        border-radius: 4px;
+        background-color: #1E222B;
+        border-radius: 8px;
+        padding: 10px 20px;
+        border: 1px solid #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .stTabs [aria-selected="true"] {
-        background-color: rgba(31, 111, 235, 0.1) !important;
-        border: 1px solid #00f0ff !important;
-        color: #00f0ff !important;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        background-color: #2E86AB !important; /* A nice professional blue */
+        color: white !important;
+        border: 1px solid #2E86AB;
     }
-
-    /* Predict Button (Hollow Alert Red to Glowing Red) */
+    
+    /* Upgrade the Primary Predict Button */
     div.stButton > button:first-child {
-        background-color: transparent;
-        color: #ff3333;
-        border: 2px solid #ff3333;
-        border-radius: 4px;
+        background-color: #FF4B4B;
+        color: white;
+        border-radius: 8px;
+        border: none;
         padding: 10px 24px;
         font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
         transition: all 0.3s ease;
     }
     div.stButton > button:first-child:hover {
-        background-color: #ff3333;
-        color: white;
-        box-shadow: 0px 0px 20px rgba(255, 51, 51, 0.6);
-        border-color: #ff3333;
-    }
-
-    /* Metrics display (Heads-Up Display style) */
-    [data-testid="stMetricValue"] {
-        color: #00f0ff !important;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    [data-testid="metric-container"] {
-        background-color: rgba(13, 17, 23, 0.8);
-        border: 1px solid #30363d;
-        padding: 15px;
-        border-radius: 4px;
-        border-left: 4px solid #00f0ff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        background-color: #FF3333;
+        box-shadow: 0px 4px 15px rgba(255, 75, 75, 0.4);
+        transform: translateY(-2px);
     }
     
-    /* Success and Error message styling */
-    .stException, .stAlert[data-baseweb="notification"] {
-        font-family: 'Courier New', Courier, monospace;
+    /* Style the input boxes */
+    .stTextInput > div > div > input, .stSelectbox > div > div > div {
+        background-color: #1E222B;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid #444;
     }
 </style>
 """, unsafe_allow_html=True)
